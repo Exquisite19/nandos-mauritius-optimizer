@@ -25,7 +25,13 @@ library(ggplot2)
 
 ### 📊 Performance Analysis
 ![Weekly Revenue Analysis](charts/chart4_weekly.png)
-
+* **Data Visualization (R):** Developed branded charts using `ggplot2` with the Nando's color palette.
+    ```r
+    # Branding with #E85D24 and currency formatting
+    ggplot(weekly, aes(x = day_of_week, y = daily_revenue, fill = is_weekend)) +
+      scale_fill_manual(values = c("FALSE" = "#F0A987", "TRUE" = "#E85D24")) +
+      scale_y_continuous(labels = label_comma(prefix = "Rs "))
+    ```
 ### 🗄️ Database Schema
 ```sql
 CREATE TABLE sales (
@@ -34,6 +40,13 @@ CREATE TABLE sales (
     item_name VARCHAR(100),
     price DECIMAL(10, 2) -- In Rs
 );'''
+* **Data Visualization (R):** Developed branded charts using `ggplot2` with the Nando's color palette.
+    ```r
+    # Branding with #E85D24 and currency formatting
+    ggplot(weekly, aes(x = day_of_week, y = daily_revenue, fill = is_weekend)) +
+      scale_fill_manual(values = c("FALSE" = "#F0A987", "TRUE" = "#E85D24")) +
+      scale_y_continuous(labels = label_comma(prefix = "Rs "))
+    ```
 ### 💡 Optimization Logic
 The system analyzes the `total_sold` metrics from MySQL to calculate a **Safety Stock Level** for the following week. 
 
